@@ -3,14 +3,14 @@ class TasksController < ApplicationController
     @task  = Task.new
     # @tasks = Task.all(:conditions => {:done => false}, :order => 'due_date')
     # @tasks = Task.where(:done => false).order('due_date')
-    @tasks = Task.undone
+    @tasks = Task.undone.paginate(:page => params[:page], :per_page => 10)
   end
 
   def done
     @task  = Task.new
     # @tasks = Task.all(:conditions => {:done => true}, :order => 'due_date')
     # @tasks = Task.where(:done => true).order('due_date')
-    @tasks = Task.done
+    @tasks = Task.done.paginate(:page => params[:page], :per_page => 10)
     render :action => 'index'
   end
 
