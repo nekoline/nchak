@@ -1,5 +1,5 @@
 Nchak::Application.routes.draw do
-  resources :tasks, :only => [:index]
+  resources :tasks, :only => [:index, :create]
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
