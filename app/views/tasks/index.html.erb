@@ -6,10 +6,11 @@
   </ul>
 <% end %>
 
+<%= navigation_links %>
+
 <table class="tasks">
   <col class="name">
   <col class="due_date">
-  <% @tasks.each do |task| %>
-    <%= render 'task', :task => task %>
-  <% end %>
+  <col class="commands">
+  <%= render @tasks %>
 </table>
